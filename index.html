@@ -1,323 +1,231 @@
-<!DOCTYPE html>
-<html>
+
+<!doctype html>
+<html lang="en">
+
 <head>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <title></title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+  <title>PoseProbe</title>
 </head>
+
 <body>
+  <div class="container">
+    <br>
+    <div style="text-align: center;">  
+      <h1>PoseProbe</h1>
+      <h3>Generic Objects as Pose Probes for Few-Shot View Synthesis</h3>
+      <div style="margin-top: 15px;">
+        <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://github.com/zhirui-gao/" target="_blank">Zhirui Gao</a></span>
+        <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://zhirui-gao.github.io/PoseProbe.github.io/" target="_blank">Renjiao Yi</a></span>
+        <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://zhirui-gao.github.io/PoseProbe.github.io/" target="_blank">Chenyang Zhu</a></span>
+        <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://zhirui-gao.github.io/PoseProbe.github.io/" target="_blank">Ke Zhuang</a></span>
+        <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://zhirui-gao.github.io/PoseProbe.github.io/" target="_blank">Wei Cheng</a></span>
+        <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://kevinkaixu.net/" target="_blank">Kai Xu</a><sup>*</sup></span
+      </div>
+      <div>
+        <span style="margin-right: 10px; font-size: 1.3em;">National University of Defense Technology</span>
+      </div>
+    </div>
+
+    <div class="text-center" style="font-size: 1.5em; margin-top: 25px;">
+      <a class="btn btn-primary btn-lg" target="_blank"
+        href="https://arxiv.org/pdf/2408.16690" role="button"
+        style="margin-right: 10px;  margin-bottom: 10px;">Arxiv</a>
+        <a class="btn btn-primary btn-lg" target="_blank"
+        href="https://zhirui-gao.github.io/PoseProbe.github.io/" role="button"
+        style="margin-right: 10px;  margin-bottom: 10px;">Code</a>
+        <a class="btn btn-primary btn-lg" target="_blank"
+        href="https://zhirui-gao.github.io/PoseProbe.github.io/" role="button"
+        style="margin-right: 10px;  margin-bottom: 10px;">Video</a>
+       
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="embed-responsive embed-responsive-21by9">
+          <video controls loop muted autoplay class="embed-responsive-item">
+            <source src="vedio_results.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center" style="font-size: 1.5em;">
+          <span style="font-weight: bold;">PoseProbe</span> enables realistic view synthesis from few input
+          images <span style="font-weight: bold;"> without pose prior</span>.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top: 30px;">
+      <h2 class="text-center">
+        Abstract
+      </h2>
+      <p style="font-style: italic; margin-bottom: 5px;" class="text-left">
+        Radiance fields including NeRFs and 3D Gaussians demonstrate great potential in high-fidelity rendering and scene
+        reconstruction, while they require a substantial number of posed images as inputs. COLMAP is frequently employed
+        for preprocessing to estimate poses, while it necessitates a large number of feature matches to operate effectively, and it
+        struggles with scenes characterized by sparse features, large baselines between images, or a limited number of input images. 
+        We aim to tackle few-view NeRF reconstruction using only 3 to 6 unposed scene images. Traditional methods often
+        use calibration boards but they are not common in images. We propose a novel idea of utilizing everyday objects, 
+        commonly found in both images and real life, as “pose probes”. The probe object is automatically segmented by SAM, 
+        whose shape is initialized from a cube. We apply a dual-branch volume rendering optimization (object NeRF and scene NeRF) to constrain the pose optimization and jointly refine the geometry. Specifically, object poses of two views are first estimated
+        by PnP matching in an SDF representation, which serves as initial poses. PnP matching, requiring only a few features, is suitable for feature-sparse scenes. Additional views
+        are incrementally incorporated to refine poses from preceding views. In experiments, PoseProbe achieves state-of-theart performance in both pose estimation and novel view synthesis across multiple datasets. We demonstrate its effectiveness, particularly in few-view and large-baseline scenes
+        where COLMAP struggles. In ablations, using different objects in a scene yields comparable performance.
+      </p>
+  
+    </div>
 
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Generic Objects as Pose Probes for Few-Shot View Synthesis</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Zhirui Gao,</span>
-              <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Renjiao Yi,</a>
-                  </span>  
-              <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Chenyang Zhu,</a>
-                  </span>  
-              <span class="author-block">
-                    <a href="https://zhirui-gao.github.io/PoseProbe.github.io/" target="_blank">Ke Zhuang,</a>
-                  </span>  
-              <span class="author-block">
-                    <a href="https://zhirui-gao.github.io/PoseProbe.github.io/" target="_blank">Wei Cheng,</a>
-                  </span>  
-              <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Kai Xu</a><sup>*</sup>,</span>
-                  
-                  </div>
+    
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates the corresponding author</small></span>
-                  </div>
+    <div style="margin-top: 50px;">
+      <div class="text-center">
+        <h2>
+          Method Overview
+        </h2>
+        <img src="method_fig.png" width=100% class="img-fluid" alt="Responsive image">
+      </div>
+      <div style="margin-top: 35px;" class="text-left">
+        <p>
+          We leverage  <span style="font-weight: bold;"></span>generic objects</span> <span style="font-weight: bold;">in few-view input images</span> 
+          as <span style="font-weight: bold;">pose probes</span>. The pose probe is automatically segmented by SAM with prompts, 
+          and initialized by <span style="font-weight: bold;">a cube shape</span>. The method does not introduce extra burden but
+          successfully facilitates pose estimation in feature-sparse scenes. 
+        </p>
+      </div>
+    </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+    <div style="margin-top:50px;">
+      <h2 class="text-center">
+        Results
+      </h2>
+      <h4 class="text-left" >View Synthesis on our synthesis dataset from 3 Input Views</h4>
+      <p class="text-left">
+       This dataset is generated using BlenderProc with wide-baseline views. 
+        We only have access to <span style="font-weight: bold;">3 input views</span>, without <span style="font-weight: bold;"> camera pose prior</span>. 
+        <span style="font-weight: bold;">Our method renders clearer details and fewer artifacts compared to other pose-free baselines!</span> Note that the
+        camera poses derived via PnP in our method serve as the initial poses for all NeRF baseline for a fair comparison.
+      </p>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+          <div class="embed-responsive embed-responsive-21by9">
+            <video controls loop muted autoplay class="embed-responsive-item">
+              <source src="videos/subset_3/hat.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+          <div class="embed-responsive embed-responsive-21by9">
+            <video controls loop muted autoplay class="embed-responsive-item">
+              <source src="videos/subset_3/coke.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+          <div class="embed-responsive embed-responsive-21by9">
+            <video controls loop muted autoplay class="embed-responsive-item">
+              <source src="videos/subset_3/deskcar.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+     
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+      <h4  class="text-left" >View Synthesis on DTU from 3 Input Views with Noisy Camera Poses </h4>
+      <p class="text-left" >
+        DTU is composed of complex object-centric scenes, with wide-baseline views spanning a half-hemisphere.
+        We only have access to <span style="font-weight: bold;">3 input views</span>, <span style="font-weight: bold;">without camera pose prior</span>.  
+        As before,  All baselines suffer from blurriness and inaccurate scene geometry, while our approach produces much better-quality novel-view renderings thanks to the
+        pose probe constraint.  Note that the camera poses derived via PnP in our method serve as the initial poses for all NeRF baseline for a fair comparison.
+      </p>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+          <div class="embed-responsive embed-responsive-21by9">
+            <video controls loop muted autoplay class="embed-responsive-item">
+              <source src="videos/subset_3/scan1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+          <div class="embed-responsive embed-responsive-21by9">
+            <video controls loop muted autoplay class="embed-responsive-item">
+              <source src="videos/subset_3/scan2.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+          <div class="embed-responsive embed-responsive-21by9">
+            <video controls loop muted autoplay class="embed-responsive-item">
+              <source src="videos/subset_3/scan4.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
 
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
+      
 
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+      <div>
+        <h2 class="text-center" style="margin-top: 30px;">
+          Citation
+        </h2>
+        <p class="text-left">
+          If you want to cite our work, please use:
+        </p>
+        <pre class="text-left">
+          @article{gao2024generic,
+            title={Generic Objects as Pose Probes for Few-Shot View Synthesis},
+            author={Gao, Zhirui and Yi, Renjiao and Zhu, Chenyang and Zhuang, Ke and Chen, Wei and Xu, Kai},
+            journal={arXiv preprint arXiv:2408.16690},
+            year={2024}
+          }
+      </pre>
+      </div>
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+      
+        <footer class="footer">
+          <div class="container">
+            <div class="columns is-centered">
+              <div class="column is-8">
+                <div class="content">
+        
+                  <p>
+                    This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                    You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                    Commons Attribution-ShareAlike 4.0 International License</a>.
+                  </p>
+        
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        </footer>
 
+</body>
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
+</html>
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Radiance fields including NeRFs and 3D Gaussians demonstrate great potential in high-fidelity rendering and scene reconstruction, while they require a substantial number of posed images as inputs. COLMAP is frequently employed for preprocessing to estimate poses, while it necessitates a large number of feature matches to operate effectively, and it struggles with scenes characterized by sparse features, large baselines between images, or a limited number of input images. 
-We aim to tackle few-view NeRF reconstruction using only 3 to 6 unposed scene images. Traditional methods often use calibration boards but they are not common in images. We propose a novel idea of utilizing everyday objects, commonly found in both images and real life, as ``pose probes''.  The probe object is automatically segmented by SAM, whose shape is initialized from a cube. We apply a dual-branch volume rendering optimization (object NeRF and scene NeRF) to constrain the pose optimization and jointly refine the geometry.  Specifically, object poses of two views are first estimated by PnP matching in an SDF representation, which serves as initial poses. PnP matching, requiring only a few features, is suitable for feature-sparse scenes. Additional views are incrementally incorporated to refine poses from preceding views. In experiments, PoseProbe achieves state-of-the-art performance in both pose estimation and novel view synthesis across multiple datasets. We demonstrate its effectiveness, particularly in few-view and large-baseline scenes where COLMAP struggles. In ablations, using different objects in a scene yields comparable performance. 
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
