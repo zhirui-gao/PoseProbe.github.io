@@ -1,6 +1,6 @@
 # PoseProbe
 
-This is the repository that contains source code for the [SPARF website](https://prunetruong.com/sparf.github.io/).
+This is the repository that contains source code for the [PoseProbe website](https://zhirui-gao.github.io/PoseProbe.github.io/).
 
 If you find this work useful for your work please cite:
 ```
