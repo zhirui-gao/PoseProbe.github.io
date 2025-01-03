@@ -19,7 +19,7 @@
     <br>
     <div style="text-align: center;">  
       <h1>PoseProbe</h1>
-      <h3>Generic Objects as Pose Probes for Few-Shot View Synthesis</h3>
+      <h3>Generic Objects as Pose Probes for Few-shot View Synthesis</h3>
       <div style="margin-top: 15px;">
         <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://github.com/zhirui-gao/" target="_blank">Zhirui Gao</a></span>
         <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://zhirui-gao.github.io/PoseProbe.github.io/" target="_blank">Renjiao Yi</a></span>
@@ -39,7 +39,7 @@
         style="margin-right: 10px;  margin-bottom: 10px;">Arxiv</a>
         <a class="btn btn-primary btn-lg" target="_blank"
         href="https://zhirui-gao.github.io/PoseProbe.github.io/" role="button"
-        style="margin-right: 10px;  margin-bottom: 10px;">Code</a>
+        style="margin-right: 10px;  margin-bottom: 10px;"> Code (available upon acceptance)</a>
         <a class="btn btn-primary btn-lg" target="_blank"
         href="https://zhirui-gao.github.io/PoseProbe.github.io/" role="button"
         style="margin-right: 10px;  margin-bottom: 10px;">Video</a>
@@ -50,7 +50,7 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
 	<div class="embed-responsive embed-responsive-21by9">
           <video controls loop muted autoplay class="embed-responsive-item">
-            <source src="vedio_results.mp4" type="video/mp4">
+            <source src="videos/intro.mp4" type="video/mp4">
           </video>
         </div>
         <p class="text-center" style="font-size: 1.5em;">
@@ -65,17 +65,12 @@
         Abstract
       </h2>
       <p style="font-style: italic; margin-bottom: 5px;" class="text-left">
-        Radiance fields including NeRFs and 3D Gaussians demonstrate great potential in high-fidelity rendering and scene
-        reconstruction, while they require a substantial number of posed images as inputs. COLMAP is frequently employed
-        for preprocessing to estimate poses, while it necessitates a large number of feature matches to operate effectively, and it
-        struggles with scenes characterized by sparse features, large baselines between images, or a limited number of input images. 
-        We aim to tackle few-view NeRF reconstruction using only 3 to 6 unposed scene images. Traditional methods often
-        use calibration boards but they are not common in images. We propose a novel idea of utilizing everyday objects, 
-        commonly found in both images and real life, as “pose probes”. The probe object is automatically segmented by SAM, 
-        whose shape is initialized from a cube. We apply a dual-branch volume rendering optimization (object NeRF and scene NeRF) to constrain the pose optimization and jointly refine the geometry. Specifically, object poses of two views are first estimated
-        by PnP matching in an SDF representation, which serves as initial poses. PnP matching, requiring only a few features, is suitable for feature-sparse scenes. Additional views
-        are incrementally incorporated to refine poses from preceding views. In experiments, PoseProbe achieves state-of-theart performance in both pose estimation and novel view synthesis across multiple datasets. We demonstrate its effectiveness, particularly in few-view and large-baseline scenes
-        where COLMAP struggles. In ablations, using different objects in a scene yields comparable performance.
+        Radiance fields, including NeRFs and 3D Gaussians, demonstrate great potential in high-fidelity rendering and scene reconstruction, while they require a substantial number of posed images as inputs. COLMAP is frequently employed for preprocessing to estimate poses. 
+        However, COLMAP necessitates a large number of feature matches to operate effectively, and struggles with scenes characterized by sparse features, large baselines, or few-view images. 
+        We aim to tackle few-view NeRF reconstruction using only 3 to 6 unposed scene images, freeing from COLMAP initializations.
+        Inspired by the idea of calibration boards in traditional pose calibration, we propose a novel idea of utilizing everyday objects, commonly found in both images and real life, as ``pose probes''. 
+        By initializing the probe object as a cubic shape, we apply a dual-branch volume rendering optimization (object NeRF and scene NeRF) to constrain the pose optimization and jointly refine the geometry.  PnP matching is used to initialize poses between images incrementally, where only a few feature matches are enough. 
+        PoseProbe achieves state-of-the-art performance in pose estimation and novel view synthesis across multiple datasets in experiments. We demonstrate its effectiveness, particularly in few-view and large-baseline scenes where COLMAP struggles. In ablations, using different objects in a scene yields comparable performance, showing that PoseProbe is insensitive to the choice of probe objects. 
       </p>
   
     </div>
@@ -94,7 +89,7 @@
         <p>
           We leverage  <span style="font-weight: bold;"></span>generic objects</span> <span style="font-weight: bold;">in few-view input images</span> 
           as <span style="font-weight: bold;">pose probes</span>. The pose probe is automatically segmented by SAM with prompts, 
-          and initialized by <span style="font-weight: bold;">a cube shape</span>. The method does not introduce extra burden but
+          and initialized by <span style="font-weight: bold;">a cubic shape</span>. The method does not introduce extra burden but
           successfully facilitates pose estimation in feature-sparse scenes. 
         </p>
       </div>
@@ -109,7 +104,7 @@
        This dataset is generated using BlenderProc with wide-baseline views. 
         We only have access to <span style="font-weight: bold;">3 input views</span>, without <span style="font-weight: bold;"> camera pose prior</span>. 
         <span style="font-weight: bold;">Our method renders clearer details and fewer artifacts compared to other pose-free baselines!</span> Note that the
-        camera poses derived via PnP in our method serve as the initial poses for all NeRF baseline for a fair comparison.
+        camera poses derived via PnP in our method serve as the initial poses for all baseline for a fair comparison.
       </p>
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 gallery">
@@ -129,16 +124,45 @@
           </div>
         </div>
       </div>
+
+     
+
+      <h4  class="text-left" >View Synthesis on our ToyDesk dataset from 3 Input Views</h4>
+      <p class="text-left" >
+        This dataset consists of the scenes depicting a table with various toys arranged, capturedfrom 360° viewpoints.. 
+        We only have access to <span style="font-weight: bold;">3 input views</span>, without <span style="font-weight: bold;"> camera pose prior</span>. 
+        <span style="font-weight: bold;">Our method renders clearer details and fewer artifacts compared to other pose-free baselines!</span> Note that the
+        camera poses derived via PnP in our method serve as the initial poses for all baseline for a fair comparison.
+      </p>
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 gallery">
           <div class="embed-responsive embed-responsive-21by9">
             <video controls loop muted autoplay class="embed-responsive-item">
-              <source src="videos/subset_3/deskcar.mp4" type="video/mp4">
+              <source src="videos/subset_3/toydesk.mp4" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
-     
+      
+
+      <h4  class="text-left" >View Synthesis on our Replica dataset from 3 Input Views</h4>
+      <p class="text-left" >
+        Replica consists of videos capturing room-scale indoor scenes.  
+        We only have access to <span style="font-weight: bold;">3 input views</span>, without <span style="font-weight: bold;"> camera pose prior</span>. 
+        <span style="font-weight: bold;">Our method renders clearer details and fewer artifacts compared to other pose-free baselines!</span> Note that the
+        camera poses derived via PnP in our method serve as the initial poses for all baseline for a fair comparison.
+      </p>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+          <div class="embed-responsive embed-responsive-21by9">
+            <video controls loop muted autoplay class="embed-responsive-item">
+              <source src="videos/subset_3/room0.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+  
+      
 
       <h4  class="text-left" >View Synthesis on DTU from 3 Input Views with Noisy Camera Poses </h4>
       <p class="text-left" >
@@ -160,20 +184,12 @@
         <div class="col-md-12 col-sm-12 col-xs-12 gallery">
           <div class="embed-responsive embed-responsive-21by9">
             <video controls loop muted autoplay class="embed-responsive-item">
-              <source src="videos/subset_3/scan2.mp4" type="video/mp4">
+              <source src="videos/subset_3/scan5.mp4" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
-          <div class="embed-responsive embed-responsive-21by9">
-            <video controls loop muted autoplay class="embed-responsive-item">
-              <source src="videos/subset_3/scan4.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
+     
 
       
 
@@ -193,6 +209,10 @@
           }
       </pre>
       </div>
+
+
+
+      
 
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
