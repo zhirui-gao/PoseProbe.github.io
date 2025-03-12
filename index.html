@@ -18,19 +18,35 @@
   <div class="container">
     <br>
     <div style="text-align: center;">  
-      <h1>PoseProbe</h1>
       <h3>Generic Objects as Pose Probes for Few-shot View Synthesis</h3>
       <div style="margin-top: 15px;">
         <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://github.com/zhirui-gao/" target="_blank">Zhirui Gao</a></span>
-        <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://zhirui-gao.github.io/PoseProbe.github.io/" target="_blank">Renjiao Yi</a></span>
-        <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://zhirui-gao.github.io/PoseProbe.github.io/" target="_blank">Chenyang Zhu</a></span>
+        <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://renjiaoyi.github.io/" target="_blank">Renjiao Yi</a> <sup>*</sup> </span>
+        <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://www.zhuchenyang.net/" target="_blank">Chenyang Zhu</a></span>
         <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://zhirui-gao.github.io/PoseProbe.github.io/" target="_blank">Ke Zhuang</a></span>
         <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://zhirui-gao.github.io/PoseProbe.github.io/" target="_blank">Wei Cheng</a></span>
         <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://kevinkaixu.net/" target="_blank">Kai Xu</a><sup>*</sup></span
       </div>
       <div>
-        <span style="margin-right: 10px; font-size: 1.3em;">National University of Defense Technology</span>
+        <span style="margin-right: 6px; font-size: 1.3em;">National University of Defense Technology</span>
       </div>
+
+      <div>
+        <span style="
+          margin-right: 10px; 
+          font-size: 1.3em;
+          font-family: 'Comic Sans MS', cursive;  /* 可爱字体 */
+          color: #ff69b4;                        /* 粉色 */
+          text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+          position: relative;
+        ">
+          ✨🌸 Accepted by IEEE TCSVT 2025 🌈🎉
+        </span>
+      </div>
+      
+      <!-- 在<head>中添加Google Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
     </div>
 
     <div class="text-center" style="font-size: 1.5em; margin-top: 25px;">
@@ -38,8 +54,8 @@
         href="https://arxiv.org/pdf/2408.16690" role="button"
         style="margin-right: 10px;  margin-bottom: 10px;">Arxiv</a>
         <a class="btn btn-primary btn-lg" target="_blank"
-        href="https://zhirui-gao.github.io/PoseProbe.github.io/" role="button"
-        style="margin-right: 10px;  margin-bottom: 10px;"> Code (To be released)</a>
+        href="https://github.com/zhirui-gao/PoseProbe" role="button"
+        style="margin-right: 10px;  margin-bottom: 10px;"> Code</a>
         <a class="btn btn-primary btn-lg" target="_blank"
         href="https://zhirui-gao.github.io/PoseProbe.github.io/" role="button"
         style="margin-right: 10px;  margin-bottom: 10px;">Video</a>
@@ -61,18 +77,16 @@
     </div>
 
     <div style="margin-top: 30px;">
-      <h2 class="text-center">
+      <h2 class="text-center" style="text-align: center;">
         Abstract
       </h2>
-      <p style="font-style: italic; margin-bottom: 5px;" class="text-left">
-        Radiance fields, including NeRFs and 3D Gaussians, demonstrate great potential in high-fidelity rendering and scene reconstruction, while they require a substantial number of posed images as inputs. COLMAP is frequently employed for preprocessing to estimate poses. 
-        However, COLMAP necessitates a large number of feature matches to operate effectively, and struggles with scenes characterized by sparse features, large baselines, or few-view images. 
-        We aim to tackle few-view NeRF reconstruction using only 3 to 6 unposed scene images, freeing from COLMAP initializations.
-        Inspired by the idea of calibration boards in traditional pose calibration, we propose a novel idea of utilizing everyday objects, commonly found in both images and real life, as ``pose probes''. 
-        By initializing the probe object as a cubic shape, we apply a dual-branch volume rendering optimization (object NeRF and scene NeRF) to constrain the pose optimization and jointly refine the geometry.  PnP matching is used to initialize poses between images incrementally, where only a few feature matches are enough. 
-        PoseProbe achieves state-of-the-art performance in pose estimation and novel view synthesis across multiple datasets in experiments. We demonstrate its effectiveness, particularly in few-view and large-baseline scenes where COLMAP struggles. In ablations, using different objects in a scene yields comparable performance, showing that PoseProbe is insensitive to the choice of probe objects. 
+      <p style="font-style: italic; margin-bottom: 5px; text-align: left;">
+        Radiance fields, including NeRFs and 3D Gaussians, demonstrate great potential in high-fidelity rendering and scene reconstruction, while they require a substantial number of posed images as input. COLMAP is frequently employed for preprocessing to estimate poses. However, COLMAP necessitates a large number of feature matches to operate effectively, and struggles with scenes characterized by sparse features, large baselines, or few-view images. 
+        We aim to tackle few-view NeRF reconstruction using only 3 to 6 unposed scene images, freeing from COLMAP initializations. 
+        Inspired by the idea of calibration boards in traditional pose calibration, we propose a novel approach of utilizing everyday objects, commonly found in both images and real life, as <q style="quotes: '“' '”';">pose probes</q>.  
+        By initializing the probe object as a cube shape, we apply a dual-branch volume rendering optimization (object NeRF and scene NeRF) to constrain the pose optimization and jointly refine the geometry. PnP matching is used to initialize poses between images incrementally, where only a few feature matches are enough. 
+        PoseProbe achieves state-of-the-art performance in pose estimation and novel view synthesis across multiple datasets in experiments. We demonstrate its effectiveness, particularly in few-view and large-baseline scenes where COLMAP struggles. In ablations, using different objects in a scene yields comparable performance, showing that PoseProbe is robust to the choice of probe objects. Our project page is available at: <a href="https://zhirui-gao.github.io/PoseProbe.github.io/">https://zhirui-gao.github.io/PoseProbe.github.io/</a>
       </p>
-  
     </div>
 
 
@@ -83,7 +97,7 @@
         <h2>
           Method Overview
         </h2>
-        <img src="method_fig.png" width=100% class="img-fluid" alt="Responsive image">
+        <img src="fig_pip.png" width=100% class="img-fluid" alt="Responsive image">
       </div>
       <div style="margin-top: 35px;" class="text-left">
         <p>
@@ -110,52 +124,24 @@
         <div class="col-md-12 col-sm-12 col-xs-12 gallery">
           <div class="embed-responsive embed-responsive-21by9">
             <video controls loop muted autoplay class="embed-responsive-item">
+              <source src="videos/subset_3/hat.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+          <div class="embed-responsive embed-responsive-21by9">
+            <video controls loop muted autoplay class="embed-responsive-item">
               <source src="videos/subset_3/coke.mp4" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
 
-     
+    
 
-      <h4  class="text-left" >View Synthesis on our ToyDesk dataset from 3 Input Views</h4>
-      <p class="text-left" >
-        This dataset consists of the scenes depicting a table with various toys arranged, capturedfrom 360° viewpoints.. 
-        We only have access to <span style="font-weight: bold;">3 input views</span>, without <span style="font-weight: bold;"> camera pose prior</span>. 
-        <span style="font-weight: bold;">Our method renders clearer details and fewer artifacts compared to other pose-free baselines!</span> Note that the
-        camera poses derived via PnP in our method serve as the initial poses for all baseline for a fair comparison.
-      </p>
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
-          <div class="embed-responsive embed-responsive-21by9">
-            <video controls loop muted autoplay class="embed-responsive-item">
-              <source src="videos/subset_3/toydesk.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-      
-
-      <h4  class="text-left" >View Synthesis on our Replica dataset from 3 Input Views</h4>
-      <p class="text-left" >
-        Replica consists of videos capturing room-scale indoor scenes.  
-        We only have access to <span style="font-weight: bold;">3 input views</span>, without <span style="font-weight: bold;"> camera pose prior</span>. 
-        <span style="font-weight: bold;">Our method renders clearer details and fewer artifacts compared to other pose-free baselines!</span> Note that the
-        camera poses derived via PnP in our method serve as the initial poses for all baseline for a fair comparison.
-      </p>
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
-          <div class="embed-responsive embed-responsive-21by9">
-            <video controls loop muted autoplay class="embed-responsive-item">
-              <source src="videos/subset_3/room0.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-  
-      
-
-      <h4  class="text-left" >View Synthesis on DTU from 3 Input Views with Noisy Camera Poses </h4>
+      <h4  class="text-left" >View Synthesis on DTU from 3 Input Views</h4>
       <p class="text-left" >
         DTU is composed of complex object-centric scenes, with wide-baseline views spanning a half-hemisphere.
         We only have access to <span style="font-weight: bold;">3 input views</span>, <span style="font-weight: bold;">without camera pose prior</span>.  
